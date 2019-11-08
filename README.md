@@ -53,7 +53,11 @@ xml解析，生成
 
 **4种方式的解析速度对比：**
 
-    -建议使用dom4j
+    -建议使用dom4j：DOM4J性能最好，连Sun的JAXM也在用DOM4J.目前许多开源项目中大量采用DOM4J，
+        例如大名鼎鼎的Hibernate也用DOM4J来读取XML配置文件。如果不考虑可移植性，那就采用DOM4J.
+    -JDOM和DOM在性能测试时表现不佳：
+        - 小文档值得考虑
+        - 由于dom广泛应用与多种编程语言，且是w3c推荐，所以有些项目也会使用：比如javascript中的dom
     -SAX速度最快>dom>dom4j>jdom
 
 **4种生成xml方式的对比：**
